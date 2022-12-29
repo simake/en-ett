@@ -8,7 +8,10 @@
 .VocabQuiz {
   display: flex;
   flex-direction: column;
-  gap: 3em;
+  gap: 112px;
+
+  position: relative;
+  bottom: 75px;
 }
 
 .word {
@@ -16,7 +19,8 @@
   justify-content: center;
   gap: 1em;
 
-  font-size: 3em;
+  font-size: 4em;
+  text-shadow: #3a3956 1px 1px 3px;
 }
 
 .buttons {
@@ -26,11 +30,12 @@
 }
 
 button {
-  background-color: #ea4c89;
+  background-color: #d9b9da;
   border-style: none;
+  border: 2px solid #47507e;
 
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: 16px;
+  border-radius: 50%;
 
   font-size: 3em;
   color: #ffffff;
@@ -45,9 +50,5 @@ button:active:not(.correct):not(.incorrect) {
 } */
 
 .correct {
-  background-color: green;
-}
-
-.incorrect {
-  background-color: red;
+  background-color: #6a78b4;
 }

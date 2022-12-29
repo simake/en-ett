@@ -18,4 +18,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  background: url(https://upload.wikimedia.org/wikipedia/commons/0/0b/Mountains-1412683.png);
+  background-size: cover;
+  background-position: center;
 }
