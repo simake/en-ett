@@ -4,3 +4,42 @@
   padding: 2rem;
   text-align: center;
 }
+
+.VocabQuiz {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.word {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+
+  font-size: 3em;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+}
+
+button {
+  background-color: #ea4c89;
+  border-style: none;
+
+  padding: 10px 16px;
+  border-radius: 8px;
+
+  font-size: 3em;
+  color: #ffffff;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+button:hover,
+button:active {
+  background-color: #f082ac;
+}
