@@ -39,7 +39,15 @@ button {
   user-select: none;
 }
 
-button:hover,
-button:active {
+/* button:hover:not(.correct):not(.incorrect),
+button:active:not(.correct):not(.incorrect) {
   background-color: #f082ac;
+} */
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
 }

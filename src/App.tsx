@@ -13,32 +13,53 @@ async function getVocabs(): Promise<Vocab[]> {
 
 interface VocabQuizProps {
   vocab: Vocab;
+  done: () => void;
 }
 
-function VocabQuiz({ vocab }: VocabQuizProps) {
-  const [feedback, setFeedback] = useState<boolean | undefined>();
+function VocabQuiz({ vocab, done }: VocabQuizProps) {
+  const [selection, setSelection] = useState<'en' | 'ett' | undefined>();
 
-  const onEnClick = useCallback(() => {
-    setFeedback(vocab.article === 'en');
-  }, []);
+  useEffect(() => {
+    setSelection(undefined);
+  }, [vocab]);
 
-  const onEttClick = useCallback(() => {
-    setFeedback(vocab.article === 'ett');
-  }, []);
+  const onSelection = useCallback(
+    (newSelection: 'en' | 'ett') => {
+      if (selection === undefined) {
+        setSelection(newSelection);
+      } else {
+        done();
+      }
+    },
+    [selection]
+  );
 
   return (
     <div className="VocabQuiz">
-      <div className="word">
-        <span>?</span>
-        <span>{vocab.word}</span>
-      </div>
+      <div className="word">{vocab.word}</div>
       <div className="buttons">
-        <button onClick={onEnClick}>en</button>
-        <button onClick={onEttClick}>ett</button>
+        <button
+          onClick={() => onSelection('en')}
+          className={
+            selection && (vocab.article === 'en' ? 'correct' : undefined)
+          }
+        >
+          en
+        </button>
+        <button
+          onClick={() => onSelection('ett')}
+          className={
+            selection && (vocab.article === 'ett' ? 'correct' : undefined)
+          }
+        >
+          ett
+        </button>
       </div>
-      {feedback !== undefined && (
-        <div className="feedback">{feedback ? 'Correct' : 'Wrong'}</div>
-      )}
+      {/* {selection !== undefined && (
+        <div className="feedback">
+          {selection === vocab.article ? 'Correct' : 'Happy little mistake'}
+        </div>
+      )} */}
     </div>
   );
 }
@@ -57,7 +78,16 @@ function App() {
     getVocabs().then((x) => setVocabs(x));
   }, []);
 
-  return <div className="App">{vocab && <VocabQuiz vocab={vocab} />}</div>;
+  return (
+    <div className="App">
+      {vocab && (
+        <VocabQuiz
+          vocab={vocab}
+          done={() => setVocabIndex((index) => (index + 1) % vocabs.length)}
+        />
+      )}
+    </div>
+  );
 }
 
 export default App;
