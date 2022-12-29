@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import vocabsJson from '../assets/vocabs.json';
 import './App.css';
 
 interface Vocab {
@@ -7,8 +8,9 @@ interface Vocab {
 }
 
 async function getVocabs(): Promise<Vocab[]> {
-  const response = await fetch('assets/vocabs.json');
-  return await response.json();
+  return Promise.resolve(vocabsJson as Vocab[]);
+  // const response = await fetch('assets/vocabs.json');
+  // return await response.json();
 }
 
 interface VocabQuizProps {
