@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+// sampled from https://botia.se/sprak/substantiv
 import vocabsJson from '../assets/vocabs.json';
 import './App.css';
 
