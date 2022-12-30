@@ -41,7 +41,7 @@ function VocabQuiz({ vocab, done }: VocabQuizProps) {
     <div className="VocabQuiz">
       <a
         className="word nostyle"
-        href={`https://translate.google.com/?sl=sv&op=translate&text=${vocab.word}`}
+        href={`https://de.bab.la/woerterbuch/schwedisch-deutsch/${vocab.word}`}
         target={'_blank'}
       >
         {vocab.word}
