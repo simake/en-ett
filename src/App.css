@@ -39,6 +39,11 @@ a.nostyle:visited {
   gap: 3em;
 }
 
+.buttons > button > div {
+  position: relative;
+  bottom: 2px;
+}
+
 button {
   background-color: #d9b9da;
   border-style: none;

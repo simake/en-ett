@@ -53,7 +53,7 @@ function VocabQuiz({ vocab, done }: VocabQuizProps) {
             selection && (vocab.article === 'en' ? 'correct' : undefined)
           }
         >
-          en
+          <div>en</div>
         </button>
         <button
           onClick={() => onSelection('ett')}
@@ -61,7 +61,7 @@ function VocabQuiz({ vocab, done }: VocabQuizProps) {
             selection && (vocab.article === 'ett' ? 'correct' : undefined)
           }
         >
-          ett
+          <div>ett</div>
         </button>
       </div>
       {/* {selection !== undefined && (
