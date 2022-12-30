@@ -39,7 +39,13 @@ function VocabQuiz({ vocab, done }: VocabQuizProps) {
 
   return (
     <div className="VocabQuiz">
-      <div className="word">{vocab.word}</div>
+      <a
+        className="word nostyle"
+        href={`https://translate.google.com/?sl=sv&op=translate&text=${vocab.word}`}
+        target={'_blank'}
+      >
+        {vocab.word}
+      </a>
       <div className="buttons">
         <button
           onClick={() => onSelection('en')}

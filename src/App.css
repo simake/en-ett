@@ -23,6 +23,16 @@
   text-shadow: #3a3956 1px 1px 3px;
 }
 
+a.nostyle:link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a.nostyle:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
